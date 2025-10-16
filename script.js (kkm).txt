@@ -1,0 +1,155 @@
+// script.js
+const sets = [
+    {
+        name: 'Mad Silah Qasirah dan Mad Silah Tawilah',
+        questions: [
+            {
+                ayat: 'قُلْ هُوَ اللَّهُ أَحَدٌ',
+                corrects: [
+                    {direction: 'up', length: 2},
+                    {direction: 'up', length: 2},
+                    {direction: 'up', length: 2}
+                ]
+            },
+            {
+                ayat: 'يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ',
+                corrects: [
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4}
+                ]
+            },
+            {
+                ayat: 'وَأَمْرَأَتُهُ حَمَّالَةَ الْحَطَبِ',
+                corrects: [
+                    {direction: 'up', length: 2},
+                    {direction: 'up', length: 2},
+                    {direction: 'up', length: 2}
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Mad Jaiz dan Mad Wajib',
+        questions: [
+            {
+                ayat: 'السَّمَاءِ بَنَاهَا',
+                corrects: [
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4}
+                ]
+            },
+            {
+                ayat: 'قُوا أَنفُسَكُمْ',
+                corrects: [
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4}
+                ]
+            },
+            {
+                ayat: 'جِيْءَ بِالنُّبُوَّةِ',
+                corrects: [
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4},
+                    {direction: 'up', length: 4}
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Mad Lazim',
+        questions: [
+            {
+                ayat: 'وَلَا الضَّالِّينَ',
+                corrects: [
+                    {direction: 'up', length: 6},
+                    {direction: 'up', length: 6},
+                    {direction: 'up', length: 6}
+                ]
+            },
+            {
+                ayat: 'الْحَاقَّةُ',
+                corrects: [
+                    {direction: 'up', length: 6},
+                    {direction: 'up', length: 6},
+                    {direction: 'up', length: 6}
+                ]
+            },
+            {
+                ayat: 'الطَّامَّةُ',
+                corrects: [
+                    {direction: 'up', length: 6},
+                    {direction: 'up', length: 6},
+                    {direction: 'up', length: 6}
+                ]
+            }
+        ]
+    }
+];
+
+let currentSet = 0;
+let currentQuestion = 0;
+
+function startSet(setIndex) {
+    currentSet = setIndex;
+    currentQuestion = 0;
+    document.getElementById('main-menu').style.display = 'none';
+    document.getElementById('game-screen').style.display = 'block';
+    loadQuestion();
+}
+
+function backToMenu() {
+    document.getElementById('game-screen').style.display = 'none';
+    document.getElementById('main-menu').style.display = 'block';
+}
+
+function loadQuestion() {
+    const question = sets[currentSet].questions[currentQuestion];
+    document.getElementById('ayat').innerText = question.ayat;
+    document.getElementById('gear1').value = '';
+    document.getElementById('gear2').value = '';
+    document.getElementById('gear3').value = '';
+}
+
+function submitAnswer() {
+    const question = sets[currentSet].questions[currentQuestion];
+    const gears = ['gear1', 'gear2', 'gear3'];
+    let isCorrect = true;
+    for (let i = 0; i < 3; i++) {
+        const selected = document.getElementById(gears[i]).value;
+        const correct = question.corrects[i];
+        const correctValue = correct.direction + correct.length;
+        if (selected !== correctValue) {
+            isCorrect = false;
+            break;
+        }
+    }
+    const popup = document.getElementById('popup');
+    if (isCorrect) {
+        popup.innerText = 'بتول'; // Betul in Jawi
+        popup.className = 'correct';
+    } else {
+        popup.innerText = 'صلاح'; // Salah in Jawi
+        popup.className = 'wrong';
+    }
+    popup.style.display = 'block';
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 2000);
+}
+
+function nextQuestion() {
+    if (currentQuestion < sets[currentSet].questions.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+    }
+}
+
+function previousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+    }
+}

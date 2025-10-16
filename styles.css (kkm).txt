@@ -1,0 +1,105 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Light cyan background for a calm feel */
+    text-align: center;
+    padding: 20px;
+    color: #333; /* Dark gray text for readability */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff; /* White container background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 2px solid #4caf50; /* Green border for an educational vibe */
+}
+
+.ayat-box {
+    border: 2px dashed #ff9800; /* Orange dashed border for the ayat box */
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    direction: rtl;
+    background-color: #fff3e0; /* Light orange background */
+}
+
+.gear-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.gear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gear-label {
+    margin-bottom: 10px;
+    color: #2196f3; /* Blue color for gear labels */
+    font-weight: bold;
+}
+
+.gear-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #9c27b0; /* Purple border for selects */
+    border-radius: 5px;
+    background-color: #f3e5f5; /* Light purple background */
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff5722; /* Deep orange buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f44336; /* Redder shade on hover */
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 24px;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.correct {
+    background-color: #4caf50; /* Green for correct */
+}
+
+.wrong {
+    background-color: #f44336; /* Red for wrong */
+}
+
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #9c27b0; /* Purple for menu button */
+}
+
+.menu-button:hover {
+    background-color: #7b1fa2; /* Darker purple on hover */
+}

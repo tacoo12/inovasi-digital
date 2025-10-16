@@ -1,0 +1,72 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Pengukuhan Bacaan Mad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="main-menu">
+        <h1>Game Pengukuhan Bacaan Mad</h1>
+        <button onclick="startSet(0)">Mad Silah Qasirah dan Mad Silah Tawilah</button>
+        <br><br>
+        <button onclick="startSet(1)">Mad Jaiz dan Mad Wajib</button>
+        <br><br>
+        <button onclick="startSet(2)">Mad Lazim</button>
+    </div>
+
+    <div class="container" id="game-screen" style="display: none;">
+        <button class="menu-button" onclick="backToMenu()">Menu Utama</button>
+        <div class="ayat-box" id="ayat"></div>
+        <div class="gear-container">
+            <div class="gear">
+                <div class="gear-label">Gear 1</div>
+                <select class="gear-select" id="gear1">
+                    <option value="">Pilih</option>
+                    <option value="up2">Atas 2</option>
+                    <option value="up4">Atas 4</option>
+                    <option value="up6">Atas 6</option>
+                    <option value="down2">Bawah 2</option>
+                    <option value="down4">Bawah 4</option>
+                    <option value="down6">Bawah 6</option>
+                </select>
+            </div>
+            <div class="gear">
+                <div class="gear-label">Gear 2</div>
+                <select class="gear-select" id="gear2">
+                    <option value="">Pilih</option>
+                    <option value="up2">Atas 2</option>
+                    <option value="up4">Atas 4</option>
+                    <option value="up6">Atas 6</option>
+                    <option value="down2">Bawah 2</option>
+                    <option value="down4">Bawah 4</option>
+                    <option value="down6">Bawah 6</option>
+                </select>
+            </div>
+            <div class="gear">
+                <div class="gear-label">Gear 3</div>
+                <select class="gear-select" id="gear3">
+                    <option value="">Pilih</option>
+                    <option value="up2">Atas 2</option>
+                    <option value="up4">Atas 4</option>
+                    <option value="up6">Atas 6</option>
+                    <option value="down2">Bawah 2</option>
+                    <option value="down4">Bawah 4</option>
+                    <option value="down6">Bawah 6</option>
+                </select>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="previousQuestion()">Kembali</button>
+            <button onclick="submitAnswer()">Submit</button>
+            <button onclick="nextQuestion()">Seterusnya</button>
+        </div>
+    </div>
+
+    <div id="popup"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
